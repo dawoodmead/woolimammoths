@@ -45,8 +45,9 @@
     <Reference Include="Sitecore.DataExchange.Providers.Sc.Local">
       <HintPath>..\lib\Sitecore.DataExchange.Providers.Sc.Local.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.Kernel.dll</HintPath>
+    <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sitecore.Kernel.NoReferences.8.2.161221\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Services.Core">
       <HintPath>..\lib\Sitecore.Services.Core.dll</HintPath>
@@ -76,7 +77,9 @@
     <Compile Include="Processors\PipelineSteps\UpdateMediaItemProcessorStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
