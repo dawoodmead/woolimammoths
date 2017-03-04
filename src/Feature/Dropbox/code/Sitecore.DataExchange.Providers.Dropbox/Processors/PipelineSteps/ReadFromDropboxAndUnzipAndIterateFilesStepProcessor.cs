@@ -39,21 +39,17 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Processors.PipelineSteps
             {
                 return;
             }
-            if (string.IsNullOrWhiteSpace(settings.DropboxUrl))
+            if (string.IsNullOrWhiteSpace(settings.DropboxUrl) || string.IsNullOrWhiteSpace(settings.FilesDirectory))
             {
                 logger.Error(
-                    "No Dropbox Url is specified on the endpoint. " +
+                    "No Dropbox Url or Files Directory is specified on the endpoint. " +
                     "(pipeline step: {0}, endpoint: {1})",
                     pipelineStep.Name, endpoint.Name);
                 return;
             }
             if (!Directory.Exists(settings.FilesDirectory))
             {
-                logger.Error(
-                    "The Files Directory specified on the endpoint does not exist. " +
-                    "(pipeline step: {0}, endpoint: {1}, path: {2})",
-                    pipelineStep.Name, endpoint.Name, settings.FilesDirectory);
-                return;
+                Directory.CreateDirectory(settings.FilesDirectory);
             }
 
             var folder = DownloadAndUnzipHelper.Run(settings.DropboxUrl);
