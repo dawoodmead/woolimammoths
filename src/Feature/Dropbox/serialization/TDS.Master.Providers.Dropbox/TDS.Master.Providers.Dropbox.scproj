@@ -28,8 +28,8 @@
     <DebugSymbols>true</DebugSymbols>
     <OutputPath>.\bin\Debug\</OutputPath>
     <RecursiveDeployAction>Ignore</RecursiveDeployAction>
-    <SitecoreDeployFolder>C:\inetpub\wwwroot\Hackathon\Website</SitecoreDeployFolder>
-    <SitecoreWebUrl>http://hackathon/</SitecoreWebUrl>
+    <SitecoreDeployFolder>C:\inetpub\wwwroot\HackathonClean\Website</SitecoreDeployFolder>
+    <SitecoreWebUrl>http://hackathonclean/</SitecoreWebUrl>
     <SitecoreAccessGuid>5b23c885-d4ab-45e9-b598-5c7cfd38b9c7</SitecoreAccessGuid>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>False</DisableFileDeployment>
@@ -270,6 +270,7 @@
     </SitecoreItem>
     <SitecoreItem Include="sitecore\system\Settings\Rules\Insert Options\Rules\Data Exchange - Dropbox Provider.item">
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
+      <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\templates.item">
       <ChildItemSynchronization>NoChildSynchronization</ChildItemSynchronization>

@@ -12,18 +12,28 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
 
         public static string Run(string dropboxurl)
         {
+            var downloadLocation = "\\temp\\dropbox\\";
+            var uploadLocation = "\\upload\\dropboxextract\\";
             var datePart = DateTime.Now.ToString("yyyyMMMMddhhmmss");
-            var zipPath = AssemblyDirectory + "\\upload\\dropbox\\" + datePart + ".zip";
-            var extractPath = AssemblyDirectory + "\\upload\\dropboxextract\\" + datePart;
+            var zipPath = AssemblyDirectory + downloadLocation + datePart + ".zip";
+            var extractPath = AssemblyDirectory + uploadLocation + datePart;
 
             //check for  dl=1
             var url = dropboxurl;
+            if (!Directory.Exists(AssemblyDirectory + downloadLocation))
+            {
+                Directory.CreateDirectory(AssemblyDirectory + downloadLocation);
+            }
 
-            var client = new WebClient();
-            client.DownloadFile(url, zipPath);
-            client.Dispose();
+            using (var client = new WebClient())
+            {
+                client.DownloadFile(url, zipPath);
+            }
+           
 
             UnzipFiles(zipPath, extractPath);
+
+           
 
             return extractPath;
         }
@@ -53,6 +63,7 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
                     }
                 }
             }
+            File.Delete(zipPath);
         }
 
         private static void CreateDirectoryRecursively(string extractPath, string path)

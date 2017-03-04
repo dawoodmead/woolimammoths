@@ -11,7 +11,7 @@ using Sitecore.Resources.Media;
 
 namespace Sitecore.DataExchange.Providers.Dropbox.Processors.PipelineSteps
 {
-    [RequiredEndpointPlugins(typeof(DropboxSettings))]
+    [RequiredEndpointPlugins(typeof (DropboxSettings))]
     public class ReadFromDropboxAndUnzipAndIterateFilesStepProcessor : BaseReadDataStepProcessor
     {
         protected override void ReadData(
@@ -47,37 +47,12 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Processors.PipelineSteps
                     pipelineStep.Name, endpoint.Name);
                 return;
             }
-            if (!Directory.Exists(settings.FilesDirectory))
-            {
-                logger.Error(
-                    "The Files Directory specified on the endpoint does not exist. " +
-                    "(pipeline step: {0}, endpoint: {1}, path: {2})",
-                    pipelineStep.Name, endpoint.Name, settings.FilesDirectory);
-                return;
-            }
 
-            var folder = DownloadAndUnzipHelper.Run(settings.DropboxUrl);
 
-            foreach (var filePath in Directory.GetFiles(folder))
-            {
-                try
-                {
-                        var mediaCreator = new MediaCreator();
-                        var mediaCreatorOptions = new MediaCreatorOptions();
-
-                        var fi = new FileInfo(filePath);
-                        var fs = fi.OpenRead();
-
-                        mediaCreator.CreateFromFile(filePath, mediaCreatorOptions);
-                        fs.Close();
-                }
-                catch (Exception ex)
-                {
-                    logger.Error("Error while processing files (pipeline step: {0}, endpoint: {1}, path: {2}, exception message: {3})",
-                        pipelineStep.Name, endpoint.Name, filePath, ex.ToString());
-                    throw ex;
-                }
-            }
+            DownloadAndUnzipHelper.Run(settings.DropboxUrl);
+            
         }
+
+
     }
 }
