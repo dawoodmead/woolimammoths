@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D3A29F10-264F-4692-95FD-DC5A616BD08C}</ProjectGuid>
+    <ProjectGuid>{CA319127-32F4-4A28-8DC8-504861B4003A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Examples.FileSystem</RootNamespace>
-    <AssemblyName>Examples.FileSystem</AssemblyName>
+    <RootNamespace>Sitecore.DataExchange.Providers.Dropbox</RootNamespace>
+    <AssemblyName>Sitecore.DataExchange.Providers.Dropbox</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,29 +30,31 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Sitecore.DataExchange, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.DataExchange.dll</HintPath>
+    <Reference Include="Sitecore.DataExchange">
+      <HintPath>..\lib\Sitecore.DataExchange.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.DataExchange.DataAccess, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.DataExchange.DataAccess.dll</HintPath>
+    <Reference Include="Sitecore.DataExchange.DataAccess">
+      <HintPath>..\lib\Sitecore.DataExchange.DataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.DataExchange.Local">
+      <HintPath>..\lib\Sitecore.DataExchange.Local.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.DataExchange.Providers.Sc">
-      <HintPath>..\..\..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.DataExchange.Providers.Sc.dll</HintPath>
+      <HintPath>..\lib\Sitecore.DataExchange.Providers.Sc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.DataExchange.Providers.Sc.Local">
-      <HintPath>..\..\..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.DataExchange.Providers.Sc.Local.dll</HintPath>
+      <HintPath>..\lib\Sitecore.DataExchange.Providers.Sc.Local.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel">
-      <HintPath>..\..\..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\inetpub\wwwroot\Hackathon\Website\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>
-    <Reference Include="Sitecore.Services.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sitecore.Services.Core.8.1.151207\lib\NET45\Sitecore.Services.Core.dll</HintPath>
-      <Private>True</Private>
+    <Reference Include="Sitecore.Services.Core">
+      <HintPath>..\lib\Sitecore.Services.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,19 +64,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converters\DataAccess\ValueAccessors\ArrayValueAccessorConverter.cs" />
-    <Compile Include="Converters\Endpoints\TextFileEndpointConverter.cs" />
-    <Compile Include="Converters\PipelineSteps\ReadFilesStepConverter.cs" />
-    <Compile Include="EndpointExtensions.cs" />
+    <Compile Include="Converters\Endpoints\DropboxEndpointConverter.cs" />
+    <Compile Include="Converters\PipelineSteps\ReadFromDropboxAndUnzipAndIterateFilesStepConverter.cs" />
+    <Compile Include="Endpoints\Extensions\EndpointExtensions.cs" />
+    <Compile Include="Helpers\DownloadAndUnzip.cs" />
     <Compile Include="Models\ItemModels\DataAccess\ArrayValueAccessorItemModel.cs" />
-    <Compile Include="Models\ItemModels\Endpoints\TextFileEndpointItemModel.cs" />
-    <Compile Include="Models\ItemModels\PipelineSteps\ReadTextFileStepItemModel.cs" />
-    <Compile Include="Plugins\TextFileSettings.cs" />
-    <Compile Include="Processors\PipelineSteps\UpdateItemStepProcessor.cs" />
-    <Compile Include="Processors\PipelineSteps\ReadFilesStepProcessor.cs" />
+    <Compile Include="Models\ItemModels\Endpoints\DropboxEndpointItemModel.cs" />
+    <Compile Include="Models\ItemModels\PipelineSteps\ReadFromDropboxAndUnzipAndIterateFilesStepItemModel.cs" />
+    <Compile Include="Plugins\DropboxSettings.cs" />
+    <Compile Include="Processors\PipelineSteps\ReadFromDropboxAndUnzipAndIterateFilesStepProcessor.cs" />
+    <Compile Include="Processors\PipelineSteps\UpdateMediaItemProcessorStep.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

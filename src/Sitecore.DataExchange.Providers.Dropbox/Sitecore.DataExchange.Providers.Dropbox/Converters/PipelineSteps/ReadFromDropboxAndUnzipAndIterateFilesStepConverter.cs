@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Examples.FileSystem.Models.ItemModels.PipelineSteps;
 using Sitecore.DataExchange.Converters.PipelineSteps;
 using Sitecore.DataExchange.Models;
 using Sitecore.DataExchange.Plugins;
+using Sitecore.DataExchange.Providers.Dropbox.Models.ItemModels.PipelineSteps;
 using Sitecore.DataExchange.Repositories;
 using Sitecore.Services.Core.Model;
 
-namespace Examples.FileSystem.Converters.PipelineSteps
+namespace Sitecore.DataExchange.Providers.Dropbox.Converters.PipelineSteps
 {
-    public class ReadTextFileStepConverter : BasePipelineStepConverter<ItemModel>
+    public class ReadFromDropboxAndUnzipAndIterateFilesStepConverter : BasePipelineStepConverter<ItemModel>
     {
-        private static readonly Guid TemplateId = Guid.Parse("7890912B-DA85-49F5-B2CD-8BB73F0DFBFC");
-        public ReadTextFileStepConverter(IItemModelRepository repository) : base(repository)
+        private static readonly Guid TemplateId = Guid.Parse("6F64D12A-7AE2-4DD7-B747-6BC800ED1E64");
+        public ReadFromDropboxAndUnzipAndIterateFilesStepConverter(IItemModelRepository repository) : base(repository)
         {
-            this.SupportedTemplateIds.Add(TemplateId);
+            SupportedTemplateIds.Add(TemplateId);
         }
         protected override void AddPlugins(ItemModel source, PipelineStep pipelineStep)
         {
@@ -26,7 +22,7 @@ namespace Examples.FileSystem.Converters.PipelineSteps
         private void AddEndpointSettings(ItemModel source, PipelineStep pipelineStep)
         {
             var settings = new EndpointSettings();
-            var endpointFrom = base.ConvertReferenceToModel<Endpoint>(source, ReadTextFileStepItemModel.EndpointFrom);
+            var endpointFrom = ConvertReferenceToModel<Endpoint>(source, ReadFromDropboxAndUnzipAndIterateFilesStepItemModel.EndpointFrom);
             if (endpointFrom != null)
             {
                 settings.EndpointFrom = endpointFrom;

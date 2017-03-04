@@ -11,9 +11,9 @@ using Examples.FileSystem.Plugins;
 namespace Examples.FileSystem.Processors.PipelineSteps
 {
     [RequiredEndpointPlugins(typeof(TextFileSettings))]
-    public class ReadTextFileStepProcessor : BaseReadDataStepProcessor
+    public class ReadFilesStepProcessor : BaseReadDataStepProcessor
     {
-        public ReadTextFileStepProcessor()
+        public ReadFilesStepProcessor()
         {
         }
         protected override void ReadData(
@@ -49,7 +49,8 @@ namespace Examples.FileSystem.Processors.PipelineSteps
                     pipelineStep.Name, endpoint.Name);
                 return;
             }
-            if (!File.Exists(settings.Path))
+
+            if (!Directory.Exists(settings.Path))
             {
                 logger.Error(
                     "The path specified on the endpoint does not exist. " +
@@ -57,40 +58,11 @@ namespace Examples.FileSystem.Processors.PipelineSteps
                     pipelineStep.Name, endpoint.Name, settings.Path);
                 return;
             }
-            //
-            //read the file, one line at a time
-            var separator = new string[] { settings.ColumnSeparator };
-            var lines = new List<string[]>();
-            using (var reader = new StreamReader(File.OpenRead(settings.Path)))
-            {
-                var firstLine = true;
-                while (!reader.EndOfStream)
-                {
-                    var line = reader.ReadLine();
-                    if (firstLine && settings.ColumnHeadersInFirstLine)
-                    {
-                        firstLine = false;
-                        continue;
-                    }
-                    if (string.IsNullOrWhiteSpace(line))
-                    {
-                        continue;
-                    }
-                    //
-                    //split the line into an array, using the separator
-                    var values = line.Split(separator, StringSplitOptions.None);
-                    lines.Add(values);
-                }
-            }
-            //
-            //add the data that was read from the file to a plugin
-            var dataSettings = new IterableDataSettings(lines);
-            logger.Info(
-                "{0} rows were read from the file. (pipeline step: {1}, endpoint: {2})",
-                lines.Count, pipelineStep.Name, endpoint.Name);
-            //
-            //add the plugin to the pipeline context
+
+            var files = Directory.GetFiles(settings.Path,"*.*",SearchOption.AllDirectories);
+            var dataSettings = new IterableDataSettings(files);
             pipelineContext.Plugins.Add(dataSettings);
+            
         }
     }
 }
