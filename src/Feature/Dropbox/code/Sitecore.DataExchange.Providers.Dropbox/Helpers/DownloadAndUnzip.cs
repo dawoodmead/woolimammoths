@@ -10,31 +10,38 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
     public static class DownloadAndUnzipHelper
     {
 
-        public static string Run(string dropboxurl)
+        public static void Run(string dropboxurl)
         {
-            var downloadLocation = "\\temp\\dropbox\\";
-            var uploadLocation = "\\upload\\dropboxextract\\";
-            var datePart = DateTime.Now.ToString("yyyyMMMMddhhmmss");
-            var zipPath = AssemblyDirectory + downloadLocation + datePart + ".zip";
-            var extractPath = AssemblyDirectory + uploadLocation + datePart;
-
-            var url = FixLink(dropboxurl);
-            if (!Directory.Exists(AssemblyDirectory + downloadLocation))
+            try
             {
-                Directory.CreateDirectory(AssemblyDirectory + downloadLocation);
+                var downloadLocation = "\\temp\\dropbox\\";
+                var uploadLocation = "\\upload\\dropboxextract\\";
+                var datePart = DateTime.Now.ToString("yyyyMMMMddhhmmss");
+                var zipPath = AssemblyDirectory + downloadLocation + datePart + ".zip";
+                var extractPath = AssemblyDirectory + uploadLocation + datePart;
+
+                var url = FixLink(dropboxurl);
+                if (!Directory.Exists(AssemblyDirectory + downloadLocation))
+                {
+                    Directory.CreateDirectory(AssemblyDirectory + downloadLocation);
+                }
+
+                using (var client = new WebClient())
+                {
+                    client.DownloadFile(url, zipPath);
+                }
+                UnzipFiles(zipPath, extractPath);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+
             }
 
-            using (var client = new WebClient())
-            {
-                client.DownloadFile(url, zipPath);
-            }
-           
 
-            UnzipFiles(zipPath, extractPath);
 
-           
 
-            return extractPath;
+
         }
 
         public static string FixLink(string url)
@@ -48,8 +55,9 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
 
 
             if (!Directory.Exists(extractPath))
+            {
                 Directory.CreateDirectory(extractPath);
-
+            }
             using (var archive = ZipFile.OpenRead(zipPath))
             {
                 foreach (var entry in archive.Entries)
@@ -68,7 +76,7 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
                     }
                 }
             }
-            File.Delete(zipPath);
+            
         }
 
         private static void CreateDirectoryRecursively(string extractPath, string path)
