@@ -39,7 +39,7 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Processors.PipelineSteps
             {
                 return;
             }
-            if (string.IsNullOrWhiteSpace(settings.DropboxUrl) || string.IsNullOrWhiteSpace(settings.FilesDirectory))
+            if (string.IsNullOrWhiteSpace(settings.DropboxUrl))
             {
                 logger.Error(
                     "No Dropbox Url or Files Directory is specified on the endpoint. " +
@@ -50,9 +50,8 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Processors.PipelineSteps
 
 
             DownloadAndUnzipHelper.Run(settings.DropboxUrl);
-            
+
+            logger.Info("All files updated successfully");
         }
-
-
     }
 }

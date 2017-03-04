@@ -26,15 +26,15 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
                     Directory.CreateDirectory(AssemblyDirectory + downloadLocation);
                 }
 
-                using (var client = new WebClient())
-                {
-                    client.DownloadFile(url, zipPath);
-                }
+                var client = new WebClient();
+                client.DownloadFile(url, zipPath);
+                client.Dispose();
+
                 UnzipFiles(zipPath, extractPath);
             }
             catch (Exception ex)
             {
-                throw ex;
+               
 
             }
 

@@ -28,8 +28,7 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Converters.Endpoints
             //populate the plugin using values from the item
             settings.DropboxUrl =
                 GetStringValue(source, DropboxEndpointItemModel.DropboxUrl);
-            settings.FilesDirectory =
-                GetStringValue(source, DropboxEndpointItemModel.FilesDirectory);
+           
             //
             //add the plugin to the endpoint
             endpoint.Plugins.Add(settings);
