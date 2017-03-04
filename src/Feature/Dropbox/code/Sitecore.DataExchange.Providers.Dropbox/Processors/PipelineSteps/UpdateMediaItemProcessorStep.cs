@@ -43,25 +43,7 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Processors.PipelineSteps
                 }
                 else
                     flag = itemModelRepository.Update(id, itemModel, language);
-                var filePath = itemModel["File Path"];
-                var item = Database.GetDatabase("master").GetItem(new ID(id));
-
-                var creator = new MediaCreator();
-                var options = new MediaCreatorOptions();
-
-                var fi = new System.IO.FileInfo(filePath.ToString());
-                var fs = fi.OpenRead();
-
-                using (new SecurityModel.SecurityDisabler())
-                {
-                    item.Editing.BeginEdit();
-                    item.Fields["File Path"].Value = string.Empty;
-                    creator.AttachStreamToMediaItem(fs, item.Paths.FullPath, "iis-85.png", options);
-                    item.Editing.EndEdit();
-
-                }
-                fs.Close();
-
+               
                 if (!flag)
                 {
                     pipelineContext.Logger.Error("Item was not saved. (id: {0}, language: {1})", (object)id, (object)language);
