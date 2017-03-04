@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.DataExchange.Providers.Dropbox", "Sitecore.DataExchange.Providers.Dropbox\Sitecore.DataExchange.Providers.Dropbox.csproj", "{CA319127-32F4-4A28-8DC8-504861B4003A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.DataExchange.Providers.Dropbox", "src\Feature\Dropbox\code\Sitecore.DataExchange.Providers.Dropbox\Sitecore.DataExchange.Providers.Dropbox.csproj", "{CA319127-32F4-4A28-8DC8-504861B4003A}"
 EndProject
-Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TDS.Master.Providers.Dropbox", "..\serialization\TDS.Master.Providers.Dropbox\TDS.Master.Providers.Dropbox.scproj", "{E115812B-4C28-4DAA-8707-594C30B35405}"
+Project("{CAA73BB0-EF22-4D79-A57E-DF67B3BA9C80}") = "TDS.Master.Providers.Dropbox", "src\Feature\Dropbox\serialization\TDS.Master.Providers.Dropbox\TDS.Master.Providers.Dropbox.scproj", "{E115812B-4C28-4DAA-8707-594C30B35405}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.DataExchange.Providers.Dropbox.Tests", "..\Sitecore.DataExchange.Providers.Dropbox.Tests\Sitecore.DataExchange.Providers.Dropbox.Tests.csproj", "{F0C5BCA8-0C6C-491A-A2FB-E78864106B4E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.DataExchange.Providers.Dropbox.Tests", "src\Feature\Dropbox\tests\Sitecore.DataExchange.Providers.Dropbox.Tests\\Sitecore.DataExchange.Providers.Dropbox.Tests.csproj", "{F0C5BCA8-0C6C-491A-A2FB-E78864106B4E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.WooliMammoth.Demo", "..\Project\WooliMammoth\code\Sitecore.WooliMammoth.Demo\Sitecore.WooliMammoth.Demo.csproj", "{AF93CEEB-A0D9-4237-BA52-C8BA22893D24}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sitecore.WooliMammoth.Demo", "src\Project\WooliMammoth\code\Sitecore.WooliMammoth.Demo\Sitecore.WooliMammoth.Demo.csproj", "{AF93CEEB-A0D9-4237-BA52-C8BA22893D24}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Project", "Project", "{83DE7AF7-CA3B-47B9-BF51-81E5C60D0896}"
 EndProject

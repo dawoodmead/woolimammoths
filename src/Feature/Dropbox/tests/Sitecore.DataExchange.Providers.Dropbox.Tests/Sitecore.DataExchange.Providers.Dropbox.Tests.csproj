@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Sitecore.FakeDb, Version=1.5.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\Sitecore.DataExchange.Providers.Dropbox\packages\Sitecore.FakeDb.1.5.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
+      <HintPath>..\..\..\..\..\packages\Sitecore.FakeDb.1.5.0\lib\net45\Sitecore.FakeDb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
