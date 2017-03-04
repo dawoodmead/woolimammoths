@@ -32,26 +32,26 @@
   <ItemGroup>
     <Reference Include="Sitecore.DataExchange, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\packages\libs\Sitecore.DataExchange.dll</HintPath>
+      <HintPath>..\..\..\..\..\libs\Sitecore.DataExchange.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.DataExchange.DataAccess, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\packages\libs\Sitecore.DataExchange.DataAccess.dll</HintPath>
+      <HintPath>..\..\..\..\..\libs\Sitecore.DataExchange.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.DataExchange.Local, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\packages\libs\Sitecore.DataExchange.Local.dll</HintPath>
+      <HintPath>..\..\..\..\..\libs\Sitecore.DataExchange.Local.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.DataExchange.Providers.Sc, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\packages\libs\Sitecore.DataExchange.Providers.Sc.dll</HintPath>
+      <HintPath>..\..\..\..\..\libs\Sitecore.DataExchange.Providers.Sc.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.DataExchange.Providers.Sc.Local, Version=1.3.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\packages\libs\Sitecore.DataExchange.Providers.Sc.Local.dll</HintPath>
+      <HintPath>..\..\..\..\..\libs\Sitecore.DataExchange.Providers.Sc.Local.dll</HintPath>
     </Reference>
     <Reference Include="Sitecore.Kernel, Version=10.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\..\..\..\packages\Sitecore.Kernel.NoReferences.8.2.161221\lib\NET452\Sitecore.Kernel.dll</HintPath>
+      <HintPath>..\..\..\..\..\Sitecore.Kernel.NoReferences.8.2.161221\lib\NET452\Sitecore.Kernel.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Sitecore.Services.Core">
