@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Reflection;
 
@@ -26,22 +27,29 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
                     Directory.CreateDirectory(AssemblyDirectory + downloadLocation);
                 }
 
-                var client = new WebClient();
-                client.DownloadFile(url, zipPath);
-                client.Dispose();
 
-                UnzipFiles(zipPath, extractPath);
+                if (!HasUrlExtensions(dropboxurl))
+                {
+                    var client = new WebClient();
+                    client.DownloadFile(url, zipPath);
+                    client.Dispose();
+                    UnzipFiles(zipPath, extractPath);
+                }
+                else
+                {
+                    var client = new WebClient();
+                    var extension = GetUrlExtension(url).Replace("?dl=1", string.Empty);
+                    client.DownloadFile(url, extractPath  +  extension);
+                    client.Dispose();
+                }
+
             }
             catch (Exception ex)
             {
-               
+
 
             }
-
-
-
-
-
+            
         }
 
         public static string FixLink(string url)
@@ -104,6 +112,20 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
                 string path = Uri.UnescapeDataString(uri.Path);
                 return Path.GetDirectoryName(path).Replace("\\bin",string.Empty);
             }
+        }
+
+        private static bool HasUrlExtensions(string url)
+        {
+            Uri uri = new Uri(url);
+            return Path.HasExtension(uri.AbsoluteUri);
+
+            
+        }
+
+        private static string GetUrlExtension(string url)
+        {
+
+            return Path.GetExtension(url);
         }
     }
 }
