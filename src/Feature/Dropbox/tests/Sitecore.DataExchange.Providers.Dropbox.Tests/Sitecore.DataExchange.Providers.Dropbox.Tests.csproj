@@ -61,6 +61,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\code\Sitecore.DataExchange.Providers.Dropbox\Sitecore.DataExchange.Providers.Dropbox.csproj">
+      <Project>{ca319127-32f4-4a28-8dc8-504861b4003a}</Project>
+      <Name>Sitecore.DataExchange.Providers.Dropbox</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

@@ -16,8 +16,7 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
             var zipPath = AssemblyDirectory + "\\upload\\dropbox\\" + datePart + ".zip";
             var extractPath = AssemblyDirectory + "\\upload\\dropboxextract\\" + datePart;
 
-            //check for  dl=1
-            var url = dropboxurl;
+            var url = FixLink(dropboxurl);
 
             var client = new WebClient();
             client.DownloadFile(url, zipPath);
@@ -26,6 +25,12 @@ namespace Sitecore.DataExchange.Providers.Dropbox.Helpers
             UnzipFiles(zipPath, extractPath);
 
             return extractPath;
+        }
+
+        public static string FixLink(string url)
+        {
+            var uri = new Uri(url);
+            return uri.GetLeftPart(UriPartial.Path) + "?dl=1";
         }
 
         private static void UnzipFiles(string zipPath, string extractPath)
