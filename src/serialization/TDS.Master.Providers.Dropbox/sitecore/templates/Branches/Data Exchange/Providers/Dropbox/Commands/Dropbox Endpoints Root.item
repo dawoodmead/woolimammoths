@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {44B48B75-4950-4E7E-B7F1-83747D076997}
+database: master
+path: /sitecore/templates/Branches/Data Exchange/Providers/Dropbox/Commands/Dropbox Endpoints Root
+parent: {00CD82F8-59DD-4EA7-8CCD-6A235803BE82}
+name: Dropbox Endpoints Root
+master: {D1DCFBCC-DACC-414F-BDC4-8A3E1C41988B}
+template: {B2613CC1-A748-46A3-A0DB-3774574BD339}
+templatekey: Command Template
+created: 20170304T115544Z
+
+----field----
+field: {854CC8F6-94AD-4521-A4B6-44ED8F794C98}
+name: Command
+key: command
+content-length: 106
+
+dataExchange:createItemWithoutPromptingForNameCommand(settingsItem={44B48B75-4950-4E7E-B7F1-83747D076997})
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{BF1E390B-56CA-45AF-ACA0-58627A659C9D}
+----version----
+language: en
+version: 1
+revision: 7192d9f4-cf84-4577-97ad-4f56617d7dc3
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T115544Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7192d9f4-cf84-4577-97ad-4f56617d7dc3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T115544Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

@@ -1,0 +1,80 @@
+----item----
+version: 1
+id: {55162D27-76A6-4AE0-8F8C-E4694F067B1A}
+database: master
+path: /sitecore/templates/Branches/Data Exchange/Providers/Dropbox/Commands/Dropbox Endpoints Root/New Item Settings
+parent: {44B48B75-4950-4E7E-B7F1-83747D076997}
+name: New Item Settings
+master: {D1DCFBCC-DACC-414F-BDC4-8A3E1C41988B}
+template: {7413953F-763F-44DE-AC9B-2A29C6B5A0C5}
+templatekey: New Item Settings
+created: 20170304T115544Z
+
+----field----
+field: {A46A30EB-0A43-4742-8F5D-A6AB94A7AD58}
+name: NewItemName
+key: newitemname
+content-length: 7
+
+Dropbox
+----field----
+field: {8E3BA4DB-4577-4A5C-A54A-7A1775596E19}
+name: NewItemTemplate
+key: newitemtemplate
+content-length: 38
+
+{9F0C2BCB-EF12-4E0E-B34B-11C5F299953E}
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{81FE94AC-5AED-45DC-B326-C2CA8C9DBADD}
+----version----
+language: en
+version: 1
+revision: b25d7951-8d06-4aa3-b861-93280afd729f
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T115544Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b25d7951-8d06-4aa3-b861-93280afd729f
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T115630Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

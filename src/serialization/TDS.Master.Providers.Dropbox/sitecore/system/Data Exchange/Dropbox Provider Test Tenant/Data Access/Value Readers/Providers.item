@@ -1,0 +1,66 @@
+----item----
+version: 1
+id: {47B2EE5B-FAF7-47E2-B7AA-75096964E7B5}
+database: master
+path: /sitecore/system/Data Exchange/Dropbox Provider Test Tenant/Data Access/Value Readers/Providers
+parent: {2CF8B0A4-AA19-4866-97CF-C8AD00E2D1E3}
+name: Providers
+master: {0D21226F-7B04-4FF2-9230-B55245CF6FE7}
+template: {65F5EC7C-69FA-418F-9679-FC5FDB94B01A}
+templatekey: Value Readers Providers Root
+created: 20170304T125431Z
+
+----field----
+field: {F6D8A61C-2F84-4401-BD24-52D2068172BC}
+name: __Originator
+key: __originator
+content-length: 38
+
+{7A99FC32-3FE8-4E2E-9104-97D068BFBE7E}
+----version----
+language: en
+version: 1
+revision: e349fe79-3c66-4b3e-84dc-8b07b18e19ba
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T125431Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+e349fe79-3c66-4b3e-84dc-8b07b18e19ba
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T125431Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

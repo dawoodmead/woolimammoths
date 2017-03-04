@@ -1,0 +1,94 @@
+----item----
+version: 1
+id: {28B4C274-CFA3-4B76-9A64-AB136670C8AD}
+database: master
+path: /sitecore/system/Data Exchange/Dropbox Provider Test Tenant/Pipeline Batches/Pipeline Batch
+parent: {786DD2E8-28DF-4082-A2B9-1CDE002AC010}
+name: Pipeline Batch
+master: {00000000-0000-0000-0000-000000000000}
+template: {075C4FBD-F54E-4E6D-BD54-D49BDA0913D8}
+templatekey: Pipeline Batch
+created: 20170304T142743Z
+
+----field----
+field: {9061BEEA-DF25-4B2B-A698-3F5B4E867D18}
+name: Pipelines
+key: pipelines
+content-length: 38
+
+{03B9A884-CDA3-403E-B4A8-28A3EAEBF92C}
+----field----
+field: {985BA535-0F3E-4DA8-A768-A469026DE9DB}
+name: RequestedAt
+key: requestedat
+content-length: 16
+
+20170304T165351Z
+----field----
+field: {6A2B2CBB-4338-4814-A8A9-9FECBB90456A}
+name: LastRunFinished
+key: lastrunfinished
+content-length: 16
+
+20170304T165359Z
+----field----
+field: {47F8050D-6EEE-423F-A9F0-3DC34948C365}
+name: LastRunCompleted
+key: lastruncompleted
+content-length: 1
+
+1
+----field----
+field: {83E6292F-A00E-463D-A1C6-0FC25BC0FBAD}
+name: Messages
+key: messages
+content-length: 99
+
+No summary messages were captured when the pipeline batch ran. Details may be available in the log.
+----version----
+language: en
+version: 1
+revision: b3eaba8e-ade6-43f7-b1cb-04391fdf0e3c
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T142743Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+b3eaba8e-ade6-43f7-b1cb-04391fdf0e3c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T165359Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 18
+
+sitecore\Anonymous

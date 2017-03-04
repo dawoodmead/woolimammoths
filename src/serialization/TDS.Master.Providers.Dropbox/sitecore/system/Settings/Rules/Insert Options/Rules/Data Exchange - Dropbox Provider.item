@@ -1,0 +1,85 @@
+----item----
+version: 1
+id: {830885AA-BA5D-4851-8440-85A5A3985AFF}
+database: master
+path: /sitecore/system/Settings/Rules/Insert Options/Rules/Data Exchange - Dropbox Provider
+parent: {FF0BC016-2D01-4F55-A020-EF6FC2FE7559}
+name: Data Exchange - Dropbox Provider
+master: {00000000-0000-0000-0000-000000000000}
+template: {664E5035-EB8C-4BA1-9731-A098FCC9127A}
+templatekey: Insert Options Rule
+created: 20170304T115747Z
+
+----field----
+field: {FA307B86-DA2A-44BD-887D-E2057CDB4948}
+name: Rule
+key: rule
+content-length: 723
+
+<ruleset>
+  <rule uid="{9BF9AE4D-90C3-494B-87F5-D366878A3242}">
+    <actions>
+      <action id="{918FFCF0-F9E1-4DB6-A191-3EFA5A91C583}" uid="51364815C2184265B0D6242FB9CE158B" insertoptionid="{44B48B75-4950-4E7E-B7F1-83747D076997}" />
+    </actions>
+    <conditions>
+      <and uid="9E423531CD1740FF84698B007FD9C82B">
+        <condition id="{5DE6D53E-EA62-4D17-8BDD-FEBCD80AC07B}" uid="7CF4B70456C0420F90D4FA4E89CD9D79" templateid="{6F05FFD0-4C1B-44AE-87E5-B015E1DAC352}" />
+        <condition id="{5CD2292C-32AC-4976-AA4F-A741555D22F8}" uid="C8793BA9C67246C59C3B7AD9B26F7A4B" query="./*[@@templateid='{276EF69B-1361-4ED9-AC10-8E200C252C51}']" except="true" />
+      </and>
+    </conditions>
+  </rule>
+</ruleset>
+----version----
+language: en
+version: 1
+revision: 6e8ffc7e-80c0-452b-a825-0cd35a96dfc6
+
+----field----
+field: {9E0287D9-AF90-41AD-8D36-332375E194D6}
+name: Name
+key: name
+content-length: 75
+
+Add insert options for the Dropbox provider for the Data Exchange Framework
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T115747Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+6e8ffc7e-80c0-452b-a825-0cd35a96dfc6
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T120255Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

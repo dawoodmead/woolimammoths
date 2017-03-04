@@ -1,0 +1,59 @@
+----item----
+version: 1
+id: {5AF453BE-84AB-4D33-B8D6-0F7FA7BDA1A0}
+database: master
+path: /sitecore/system/Data Exchange/Dropbox Provider Test Tenant/Endpoints/Providers/Dropbox/Dropbox Endpoint
+parent: {649DCB2A-9E0C-4DD1-B5FE-1A4B8952A781}
+name: Dropbox Endpoint
+master: {00000000-0000-0000-0000-000000000000}
+template: {276EF69B-1361-4ED9-AC10-8E200C252C51}
+templatekey: Dropbox Endpoint
+created: 20170304T130047Z
+
+----version----
+language: en
+version: 1
+revision: ff906859-ace7-404e-9f30-09c0931b6bcd
+
+----field----
+field: {1800FD56-50CE-4305-9BC8-047A4168107E}
+name: Dropbox Url
+key: dropbox url
+content-length: 73
+
+https://www.dropbox.com/sh/vs5dybevdxvkqk8/AAAkwhfKdC-Kv2GA79zfYP4_a?dl=1
+----field----
+field: {3A8CB980-99BF-4BFB-AC4A-BCA88FFB6700}
+name: Files Folder
+key: files folder
+content-length: 52
+
+C:\inetpub\wwwroot\Hackathon\Website\upload\dropbox\
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T130047Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+ff906859-ace7-404e-9f30-09c0931b6bcd
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T154655Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

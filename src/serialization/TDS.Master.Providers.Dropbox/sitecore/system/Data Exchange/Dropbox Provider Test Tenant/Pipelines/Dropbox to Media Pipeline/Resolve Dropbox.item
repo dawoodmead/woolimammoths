@@ -1,0 +1,122 @@
+----item----
+version: 1
+id: {635E05A9-3CC2-4315-B9DF-20816263C721}
+database: master
+path: /sitecore/system/Data Exchange/Dropbox Provider Test Tenant/Pipelines/Dropbox to Media Pipeline/Resolve Dropbox
+parent: {50AB472A-F47F-422A-9439-2A2089D0AB22}
+name: Resolve Dropbox
+master: {00000000-0000-0000-0000-000000000000}
+template: {D44AE29C-D708-4B3F-B04C-99E7F9288720}
+templatekey: Resolve Sitecore Item Pipeline Step
+created: 20170304T141729Z
+
+----field----
+field: {3798A7E3-61FF-4BA3-B8BA-F5CBA2929517}
+name: TemplateForNewItem
+key: templatefornewitem
+content-length: 38
+
+{F1828A2C-7E5D-4BBD-98CA-320474871548}
+----field----
+field: {21875BE1-AD41-4541-88CF-7E47551BB6AC}
+name: ItemNameValueAccessor
+key: itemnamevalueaccessor
+content-length: 38
+
+{C4ECAE28-1324-4E7A-B4B5-A169F8B42E56}
+----field----
+field: {922E98E7-BE62-4A67-8273-551F2E8C8BFE}
+name: EndpointFrom
+key: endpointfrom
+content-length: 38
+
+{6284F8D9-DF09-44E4-AA12-2681296BEB63}
+----field----
+field: {4CE9ED44-BC7F-44E5-886D-97D9A6890FAA}
+name: IdentifierValueAccessor
+key: identifiervalueaccessor
+content-length: 38
+
+{C4ECAE28-1324-4E7A-B4B5-A169F8B42E56}
+----field----
+field: {010E5D89-6409-4FBC-843B-CEB84C8ED3BB}
+name: IdentifierObjectLocation
+key: identifierobjectlocation
+content-length: 23
+
+Pipeline Context Source
+----field----
+field: {5C061C42-FF86-4F43-B5AD-831DC03DC77D}
+name: ResolvedObjectLocation
+key: resolvedobjectlocation
+content-length: 23
+
+Pipeline Context Target
+----field----
+field: {D922EA57-BCE2-4457-BC60-5FCAAFA36707}
+name: ParentForItem
+key: parentforitem
+content-length: 38
+
+{15451229-7534-44EF-815D-D93D6170BFCB}
+----field----
+field: {E074292D-0467-443C-A1B5-CBD5E5162813}
+name: MatchingFieldValueAccessor
+key: matchingfieldvalueaccessor
+content-length: 38
+
+{B02CAD6A-5086-4194-AC04-8D32AE8B8807}
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 1
+
+0
+----version----
+language: en
+version: 1
+revision: 766681a5-85e3-4b2c-a735-bacfae176cc3
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T141729Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+766681a5-85e3-4b2c-a735-bacfae176cc3
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T142049Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

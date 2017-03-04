@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {883BD39E-6700-4934-9E86-2E0B6A09F55D}
+database: master
+path: /sitecore/system/Data Exchange/Dropbox Provider Test Tenant/Value Mapping Sets/Dropbox to Media Item/File Path
+parent: {D6D77509-1EBC-478F-8504-67851982CB3B}
+name: File Path
+master: {00000000-0000-0000-0000-000000000000}
+template: {450C8F38-91C9-4896-957B-6F7DAF18CCFC}
+templatekey: Value Mapping
+created: 20170304T141451Z
+
+----field----
+field: {95184B45-EFEF-447C-9089-4F2EC5DF26C5}
+name: SourceAccessor
+key: sourceaccessor
+content-length: 38
+
+{C4ECAE28-1324-4E7A-B4B5-A169F8B42E56}
+----field----
+field: {EF84B462-7F4A-4F48-B78E-ADE192D55E82}
+name: TargetAccessor
+key: targetaccessor
+content-length: 38
+
+{B02CAD6A-5086-4194-AC04-8D32AE8B8807}
+----version----
+language: en
+version: 1
+revision: f804d9e1-03b9-4684-a0de-02ca2d3f5d0b
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T141451Z
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f804d9e1-03b9-4684-a0de-02ca2d3f5d0b
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T141535Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin

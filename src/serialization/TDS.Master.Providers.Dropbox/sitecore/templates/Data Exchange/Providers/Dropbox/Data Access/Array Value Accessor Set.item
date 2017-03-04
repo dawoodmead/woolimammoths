@@ -1,0 +1,73 @@
+----item----
+version: 1
+id: {C11325B6-1ECC-46E2-88D6-688B57436CE9}
+database: master
+path: /sitecore/templates/Data Exchange/Providers/Dropbox/Data Access/Array Value Accessor Set
+parent: {D6579DC4-B7DF-4AA7-9C38-E37F721023A5}
+name: Array Value Accessor Set
+master: {00000000-0000-0000-0000-000000000000}
+template: {AB86861A-6030-46C5-B394-E8F99E8B87DB}
+templatekey: Template
+created: 20170304T133221Z
+
+----field----
+field: {12C33F3F-86C5-43A5-AEB4-5598CEC45116}
+name: __Base template
+key: __base template
+content-length: 38
+
+{0EC4D8A7-8E8D-4A20-9F1C-FEB7CC07893B}
+----field----
+field: {F7D48A55-2158-4F02-9356-756654404F73}
+name: __Standard values
+key: __standard values
+content-length: 38
+
+{71C2BE73-3002-41A0-8E65-C65FEAA12A88}
+----field----
+field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
+name: __Icon
+key: __icon
+content-length: 35
+
+Office/32x32/radio_button_group.png
+----version----
+language: en
+version: 1
+revision: 07bf2084-98d7-4ce6-80a1-c31dbbe6e975
+
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\Admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 16
+
+20170304T133221Z
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+07bf2084-98d7-4ce6-80a1-c31dbbe6e975
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 16
+
+20170304T133316Z
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\Admin
