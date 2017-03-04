@@ -1,70 +1,105 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO.Compression;
 using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using Dropbox.Api;
+using System.IO;
+using Dropbox.Api.Users;
+using static System.Configuration.ConfigurationSettings;
 
 namespace DropboxHelloWorld
 {
+    
     class Program
     {
+
+        protected static string _downloadRootLocation { get; set; }
+        protected static string _dropboxFolderPrefix { get; set; }
+
+        protected static string _dropboxFolderPostfix { get; set; }
+
+        protected static string _dropboxSharedUrl { get; set; }
+     
         static void Main(string[] args)
         {
+            GetConfigSettings();
             var task = Task.Run((Func<Task>)Program.Run);
             task.Wait();
         }
 
+        private static void GetConfigSettings()
+        {
+            _downloadRootLocation = ConfigurationManager.AppSettings["DownloadRootLocation"];
+            _dropboxFolderPrefix = ConfigurationManager.AppSettings["DropboxFolderPrefix"];
+            _dropboxFolderPostfix = ConfigurationManager.AppSettings["DropboxFolderPostfix"];
+            _dropboxSharedUrl = ConfigurationManager.AppSettings["DropboxSharedUrl"];
+        }
+
         static async Task Run()
         {
+            string datePart = DateTime.Now.ToString(_dropboxFolderPostfix);
+            string zipPath = _downloadRootLocation + _dropboxFolderPrefix + datePart + ".zip";
 
-            string url = "https://www.dropbox.com/sh/vs5dybevdxvkqk8/AAAkwhfKdC-Kv2GA79zfYP4_a?dl=1";
+            string url = _dropboxSharedUrl;
 
             WebClient client = new WebClient();
-            client.DownloadFile(url, "sitecore-hackathon-wooli-mammoth.zip");
+            client.DownloadFile(url, zipPath);
             client.Dispose();
-            //using (var dbx = new DropboxClient("KRuKf9o33aAAAAAAAABeOKgNY98ZDz_VQ9uX0d6Gnsyg0B5aysV-qBWItpY52Jb4"))
-            //{
-            //    var full = await dbx.Users.GetCurrentAccountAsync();
-            //    Console.WriteLine("{0} - {1}", full.Name.DisplayName, full.Email);
-            //    var list = await dbx.Files.ListFolderAsync("/SBD");
 
-                
-
-            //    // show folders then files
-            //    foreach (var item in list.Entries.Where(i => i.IsFolder))
-            //    {
-            //        Console.WriteLine("D  {0}/", item.Name);
-
-            //    }
-            //    ////  var folder = await dbx.Files.ListFolderAsync("home//SBD");
-            //    //foreach (var item in list.Entries.Where(i => i.IsFile))
-            //    //{
-            //    //    Console.WriteLine("F{0,8} {1}", item.AsFile.Size, item.Name);
-            //    //    using (var response = await dbx.Files.DownloadAsync("/SBD/" +  item.Name))
-            //    //    {
-            //    //        Console.WriteLine("Downloaded {0} Rev {1}", response.Response.Name, response.Response.Rev);
-            //    //        Console.WriteLine("------------------------------");
-            //    //        //Console.WriteLine(await response.GetContentAsStringAsync());
-            //    //        //Console.WriteLine("------------------------------");
-            //    //        var file = await response.GetContentAsByteArrayAsync();
-            //    //        System.IO.File.WriteAllBytes(item.Name,file);
-
-                        
-            //    //    }
-            //    //}
-
-            //    string url = "https://www.dropbox.com/sh/vs5dybevdxvkqk8/AAAkwhfKdC-Kv2GA79zfYP4_a?dl=1";
-
-            //    WebClient client = new WebClient();
-            //    client.DownloadFile(url,"my-file.zip");
-            //    client.Dispose();
+            await Program.UnzipFiles(zipPath, datePart);
 
 
-
-            //}
         }
+
+        static async Task UnzipFiles(string zipPath, string datePart)
+        {
+
+            string extractPath = _downloadRootLocation + _dropboxFolderPrefix + datePart;
+
+            if (!System.IO.Directory.Exists(extractPath))
+                System.IO.Directory.CreateDirectory(extractPath);
+
+            using (ZipArchive archive = ZipFile.OpenRead(zipPath))
+            {
+                foreach (ZipArchiveEntry entry in archive.Entries)
+                {
+                    if (entry.Length > 0)
+                    {
+                        if (entry.FullName.IndexOf('/') > 0)
+                        {
+                            CreateDirectoryRecursively(extractPath, entry.FullName);
+                        }
+                        if (!System.IO.File.Exists(extractPath + "\\" + entry.FullName.Replace("/", "\\")))
+                        {
+                            entry.ExtractToFile(extractPath + "\\" + entry.FullName.Replace("/", "\\"));
+                        }
+                    }
+                }
+            }
+        }
+        static void CreateDirectoryRecursively(string extractPath,string path)
+        {
+            string[] pathParts = path.Split('/');
+
+            for (int i = 0; i < pathParts.Length; i++)
+            {
+               if (pathParts[i].Contains("."))
+                    continue;
+                if (i > 0)
+                pathParts[i] = Path.Combine(pathParts[i - 1], pathParts[i]);
+
+                if (!Directory.Exists(extractPath + "\\" + pathParts[i]))
+                    Directory.CreateDirectory(extractPath + "\\" + pathParts[i]);
+            }
+        }
+
+       
+
+       
 
       
     }
